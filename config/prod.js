@@ -1,6 +1,6 @@
 // prod.js - production keys here
 
-// production Google Oath  API named "CodeBuddy"
+// production Google Oath API named "CodeBuddy"
 // these values are stored in Heroku config variables - settings
 
 module.exports = {
