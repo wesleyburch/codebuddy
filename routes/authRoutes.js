@@ -19,16 +19,6 @@ module.exports = app => {
     }
   );
 
-  app.get("/user", (req, res, next) => {
-    console.log("===== user!!======");
-    console.log(req.users);
-    if (req.user) {
-      res.send({ user: req.users });
-    } else {
-      return res.json({ user: null });
-    }
-  });
-
   // passport logout
   app.get("/api/logout", (req, res) => {
     req.logout(); //logout function is a passport function
