@@ -2,13 +2,16 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose; //const Schema = mongoose.Schema; * es2015 destructuring
 
 const commentSchema = new Schema({
-  author: {
+  id: {
+    type: Schema.Types.ObjectId
+  },
+  _author: {
     id: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "users"
     },
     username: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String,
       ref: "users"
     }
   },

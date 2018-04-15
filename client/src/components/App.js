@@ -6,7 +6,8 @@ import * as actions from "../actions"; // import all action creators from our ac
 import Header from "./Header";
 import Landing from "./Landing";
 import NewPost from "./NewPost";
-const Dashboard = () => <h2>Dashboard</h2>;
+import Footer from "./Footer";
+const Dashboard = () => <h3>All Posts</h3>;
 
 class App extends Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Route path="/posts/new" component={NewPost} />
           </div>
         </BrowserRouter>
+        <Footer />
       </div>
     );
   }

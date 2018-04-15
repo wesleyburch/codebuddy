@@ -29,7 +29,7 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="amber darken-1 z-depth-1">
+      <nav className="amber darken-1 z-depth-1" style={{ marginBottom: 100 }}>
         <div className="nav-wrapper">
           <Link to={"/"} className="brand-logo left">
             CodeBuddy

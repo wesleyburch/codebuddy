@@ -5,10 +5,12 @@ const userSchema = new Schema({
   googleID: String,
   googleUserFull: String,
   googleUserFirst: String,
-  posts: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "posts"
-  }
+  posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "posts"
+    }
+  ]
 });
 
 // create a collection in mongoose called 'users' based off of userSchema

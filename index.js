@@ -4,7 +4,8 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 const bodyParser = require("body-parser");
 const keys = require("./config/keys");
-require("./models/User"); // be aware of the order of requires...
+require("./models/User");
+require("./models/Post"); // be aware of the order of requires...
 require("./services/passport"); // ...re-arrange these two to see
 
 mongoose.connect(keys.mongoURI);

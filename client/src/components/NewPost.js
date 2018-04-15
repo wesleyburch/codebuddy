@@ -20,22 +20,6 @@ const NewPost = () => {
             <div className="row">
               <div className="col s2" />
               <div className="input-field col s8">
-                <input type="text" placeholder="What Programming Language?" />
-              </div>
-              <div className="col s2" />
-            </div>
-
-            <div className="row">
-              <div className="col s2" />
-              <div className="input-field col s8">
-                <input type="text" placeholder="Your Location: i.e. Tucson" />
-              </div>
-              <div className="col s2" />
-            </div>
-
-            <div className="row">
-              <div className="col s2" />
-              <div className="input-field col s8">
                 <textarea
                   className="materialize-textarea"
                   placeholder="Enter a description of what you want to learn"
