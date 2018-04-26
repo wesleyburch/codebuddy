@@ -1,16 +1,27 @@
 const mongoose = require("mongoose");
-var Post = require("../models/Post");
+const Post = mongoose.model("posts");
 
+//New Post
 module.exports = app => {
   app.post("/posts/new", (req, res) => {
-    res.json({
-      response:
-        "Your post route can be reached and pass variables..now store them",
-      body: {
-        title: req.body.title,
-        text: req.body.text
-      }
-    });
+    var newPost = new Post(req.body);
+    newPost
+      .save()
+      .then(item => {
+        res.send("item saved to database");
+      })
+      .catch(err => {
+        res.status(400).send("unable to save to database");
+      });
+    // res.json({
+    //   response:
+    //     "Your post route can be reached and pass variables..now store them",
+    //   body: {
+    //     title: req.body.title,
+    //     text: req.body.text,
+    //     _author: req.body._author
+    //   }
+    // });
   });
 };
 
@@ -27,5 +38,4 @@ module.exports = app => {
 //});
 //});
 
-//not working. Can't post to database yet. -Wesley
-// React form needs to "POST" to port 5000 or dev server, not front end server
+// Can post to database as of 4-25-18

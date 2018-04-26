@@ -5,7 +5,7 @@ const userSchema = new Schema({
   googleID: String,
   googleUserFull: String,
   googleUserFirst: String,
-  posts: [
+  _userPosts: [
     {
       type: Schema.Types.ObjectId,
       ref: "posts"

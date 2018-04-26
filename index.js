@@ -5,7 +5,8 @@ const passport = require("passport");
 const bodyParser = require("body-parser");
 const keys = require("./config/keys");
 require("./models/User");
-require("./models/Post"); // be aware of the order of requires...
+require("./models/Post");
+require("./models/Comment"); // be aware of the order of requires...
 require("./services/passport"); // ...re-arrange these two to see
 
 mongoose.connect(keys.mongoURI);
@@ -26,6 +27,7 @@ app.use(passport.session());
 
 require("./routes/authRoutes")(app);
 require("./routes/postRoutes")(app);
+require("./routes/commentRoutes")(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
