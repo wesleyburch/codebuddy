@@ -1,41 +1,64 @@
 const mongoose = require("mongoose");
-const Post = mongoose.model("posts");
+const Post = require("../models/Post");
+const Comment = require("../models/Comment");
+const passport = require("passport");
+const middleware = require("../services/middleware.js");
 
-//New Post
 module.exports = app => {
-  app.post("/posts/new", (req, res) => {
-    var newPost = new Post(req.body);
-    newPost
-      .save()
-      .then(item => {
-        res.send("item saved to database");
-      })
-      .catch(err => {
-        res.status(400).send("unable to save to database");
-      });
-    // res.json({
-    //   response:
-    //     "Your post route can be reached and pass variables..now store them",
-    //   body: {
-    //     title: req.body.title,
-    //     text: req.body.text,
-    //     _author: req.body._author
-    //   }
+  //New Post
+  //middleware.isLoggedIn
+  app.post("/api/posts/new", middleware.isLoggedIn, (req, res) => {
+    var title = req.body.title;
+    var text = req.body.text;
+    var author = req.user._id;
+    // var newPost = new Post(title, text)
+    //   .save()
+    var newPost = { title: title, text: text, _author: author };
+    Post.create(newPost, (err, newlyCreated) => {
+      if (err) {
+        console.log(err);
+        var redir = { redirect: "/" };
+        return res.json(redir);
+      } else {
+        var redir = { redirect: "/" }; //need to send user a message
+        return res.json(redir);
+      }
+    });
+    // .then(item => {
+    //   res.json(item);
+    //   res.send("item saved to database");
+    //   res.redirect("/");
+    // })
+    // .catch(err => {
+    //   res.status(400).send("unable to save to database");
+    //   res.redirect("/");
     // });
   });
-};
 
-//var newPost = new Post({text: req.body.text, title: req.body.title});
-// Create new user. Hashes and stores password too
-// User.register(newUser, req.body.password, function(err, user){
-// if(err){
-//console.log(err);
-//return res.render("register", {error: err.message});
-//}
-//passport.authenticate("local")(req, res, function(){
-//req.flash("success", "Welcome " + user.username + "!");
-//res.redirect("/campgrounds");
-//});
-//});
+  // SHOW all posts
+  app.get("/api/posts", (req, res) => {
+    Post.find({}, function(err, allPosts) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(allPosts);
+      }
+    });
+    // res.render("campgrounds",{campgrounds: campgrounds});
+  });
+
+  // SHOW Current post
+  app.get("/api/posts/:id", (req, res) => {
+    Post.findById(req.params.id)
+      .populate("_comments")
+      .exec(function(err, foundPost) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.json(foundPost);
+        }
+      });
+  });
+};
 
 // Can post to database as of 4-25-18

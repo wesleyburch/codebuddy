@@ -19,7 +19,7 @@ class Header extends Component {
             <li>
               <a href="/api/logout">Logout</a>
             </li>
-            <li>
+            <li key={this.props.auth._id}>
               <a>Welcome, {this.props.auth.googleUserFirst}!</a>
             </li>
           </div>
@@ -29,7 +29,7 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="amber darken-1 z-depth-1" style={{ marginBottom: 100 }}>
+      <nav className="amber darken-1 z-depth-1" style={{ marginBottom: 30 }}>
         <div className="nav-wrapper">
           <Link to={"/"} className="brand-logo left">
             CodeBuddy

@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux"; // gives components ability to call action creators
 import * as actions from "../actions"; // import all action creators from our actions.js file
+import "../styles/all.css";
 
 import Header from "./Header";
 import Landing from "./Landing";
-import NewPost from "./NewPost";
+import PostForm from "./PostForm";
+import NewComment from "./Comment";
+import ShowPost from "./ShowPost";
 import Footer from "./Footer";
 const Dashboard = () => <h3>All Posts</h3>;
 
 class App extends Component {
-  componentDidMount() {
+  componentDidMount(props) {
     this.props.fetchUser();
   }
 
@@ -21,8 +24,9 @@ class App extends Component {
           <div>
             <Header />
             <Route exact path="/" component={Landing} />
-            <Route exact path="/posts" component={Dashboard} />
-            <Route path="/posts/new" component={NewPost} />
+            <Route exact path="/posts/new" component={PostForm} />
+            <Route exact path="/posts/:id" component={ShowPost} />
+            <Route exact path="/posts/:id/comment" component={NewComment} />
           </div>
         </BrowserRouter>
         <Footer />

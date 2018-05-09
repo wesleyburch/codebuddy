@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="page-footer amber darken-1" style={{ marginTop: 100 }}>
+    <footer className="page-footer amber darken-1" style={{ marginTop: 50 }}>
       <div className="container">
         <div className="row">
           <div className="col l6 s12">
@@ -35,7 +35,7 @@ const Footer = () => {
       </div>
       <div className="footer-copyright">
         <div className="container">
-          © 2014 Copyright Text
+          © 2018 Copyright
           <a className="grey-text text-lighten-4 right" href="#!">
             Github
           </a>

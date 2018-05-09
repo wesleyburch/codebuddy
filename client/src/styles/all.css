@@ -1,0 +1,19 @@
+body {
+  background-color: #e0e0e0;
+}
+
+.btn {
+  background-color: #ffb300;
+  color: #fff;
+}
+
+button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn:hover {
+  cursor: hand;
+  background-color: #c68400;
+  color: #fff;
+}

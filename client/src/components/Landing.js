@@ -1,17 +1,22 @@
 // import Radium from "radium";
 import React from "react";
+import Posts from "./AllPosts";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
-    <div className="container">
+    <div>
       <div className="row">
-        <br />
-        <br />
         <div className="col s12" style={{ textAlign: "center" }}>
-          <h1>CodeBuddy</h1>
-          <p>What do you want to learn today?</p>
+          <h5>Link up and learn!</h5>
+          <p>Create a Post or look for buddies</p>
+          <br />
+          <button className="waves-effect btn">
+            <Link to={"/posts/new"}>New Post</Link>
+          </button>
           {/*Make a Reddit-like front page with each listing?...maybe filters by state or date... */}
           <br />
+          <Posts />
         </div>
         <br />
         <br />

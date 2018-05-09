@@ -1,0 +1,104 @@
+.allPostContainer {
+  padding: 0;
+}
+
+hr {
+  margin-top: 40px;
+  color: #bdbdbd;
+  background-color: #bdbdbd;
+}
+
+.eachPost {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 1px;
+  padding: 15px;
+}
+
+.flexContainer {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.postLinkTitle {
+  text-decoration: none;
+  color: #333;
+  font-size: 2em;
+  font-weight: bold;
+}
+.postLinkTitle:hover,
+.postLink:hover {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #c68400;
+  border: 1px solid #c68400;
+  color: white;
+}
+.pLink {
+  font-size: 0.95em;
+  color: #c68400;
+}
+
+.postTitle,
+.postAuthor {
+  padding-left: 20px;
+}
+
+.postAuthor {
+  font-size: 0.75em;
+  color: #bdbdbd;
+}
+
+.postText {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.postLink {
+  font-size: 0.9em;
+  margin-left: 20px;
+  padding: 5px;
+  color: white;
+  background-color: #fdb22b;
+  border: solid 1px #fdb22b;
+  border-radius: 4px;
+}
+
+.postLink a {
+  color: #c68400;
+}
+
+.backLink {
+  margin-left: 10px;
+}
+
+.postPar,
+.postParTitle {
+  text-align: left;
+}
+
+.postPar,
+.postLink {
+  margin-top: 2px;
+}
+.postParTitle {
+  margin-bottom: 2px;
+}
+
+.postPar {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.onePost {
+  background-color: #fff;
+  border-radius: 2px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 1px;
+  padding: 15px;
+}

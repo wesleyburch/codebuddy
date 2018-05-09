@@ -1,17 +1,12 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose; //const Schema = mongoose.Schema; * es2015 destructuring
+const Post = require("./Post");
 
 const userSchema = new Schema({
   googleID: String,
   googleUserFull: String,
-  googleUserFirst: String,
-  _userPosts: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "posts"
-    }
-  ]
+  googleUserFirst: String
 });
 
 // create a collection in mongoose called 'users' based off of userSchema
-mongoose.model("users", userSchema);
+module.exports = mongoose.model("User", userSchema);

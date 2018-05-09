@@ -3,7 +3,7 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const mongoose = require("mongoose");
 const keys = require("../config/keys");
 
-const User = mongoose.model("users"); // from our User.js model
+const User = require("../models/User"); // from our User.js model
 
 // adding user into cookie.  we don't expect errors so, null
 passport.serializeUser((user, done) => {

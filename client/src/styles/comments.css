@@ -1,0 +1,16 @@
+.commentDiv {
+  width: 95%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+}
+
+.eachComment {
+  border-radius: 2px;
+  margin-bottom: 1px;
+  background-color: #eeeeee;
+  padding: 10px;
+}
+
+.commentAuthor {
+  font-size: 0.75em;
+}
